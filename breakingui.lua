@@ -54,7 +54,7 @@ local GiveItem = w:Dropdown("Items[Free]", {
         game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Bat")
     end
     if new == "Medkit" then
-        game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Medkit")
+        game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("MedKit")
     end
     if new == "Cure" then
         game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Cure")
@@ -92,11 +92,59 @@ s_2:Toggle('Auto Apple', {flag = "Toggle1"}, function(p)
     end
 end)
 
-s_2:Toggle('Auto Pizza', {flag = "Toggle1"}, function(p)
+s_2:Toggle('Auto Cookie', {flag = "Toggle1"}, function(p)
     if p then
         _G.AutoApple = true
         while _G.AutoApple do
-            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Pizza")
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Cookie")
+            wait(0.1)
+        end 
+    else
+        _G.AutoApple = false
+    end
+end)
+
+s_2:Toggle('Auto Pie', {flag = "Toggle1"}, function(p)
+    if p then
+        _G.AutoApple = true
+        while _G.AutoApple do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Pie")
+            wait(0.1)
+        end 
+    else
+        _G.AutoApple = false
+    end
+end)
+
+s_2:Toggle('Auto Chips', {flag = "Toggle1"}, function(p)
+    if p then
+        _G.AutoApple = true
+        while _G.AutoApple do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Chips")
+            wait(0.1)
+        end 
+    else
+        _G.AutoApple = false
+    end
+end)
+
+s_2:Toggle('Auto Cure', {flag = "Toggle1"}, function(p)
+    if p then
+        _G.AutoApple = true
+        while _G.AutoApple do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Cookie")
+            wait(0.1)
+        end 
+    else
+        _G.AutoApple = false
+    end
+end)
+
+s_2:Toggle('Auto Bloxy Cola', {flag = "Toggle1"}, function(p)
+    if p then
+        _G.AutoApple = true
+        while _G.AutoApple do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Bloxy Cola")
             wait(0.1)
         end 
     else
