@@ -79,6 +79,32 @@ local GiveItem = w:Dropdown("Items[Free]", {
     end
  end)
 
+local s_2 = library:CreateWindow('Food')
+s_2:Toggle('Auto Apple', {flag = "Toggle1"}, function(p)
+    if p then
+        _G.AutoApple = true
+        while _G.AutoApple do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Apple")
+            wait(0.1)
+        end 
+    else
+        _G.AutoApple = false
+    end
+end)
+
+s_2:Toggle('Auto Pizza', {flag = "Toggle1"}, function(p)
+    if p then
+        _G.AutoApple = true
+        while _G.AutoApple do
+            game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Pizza")
+            wait(0.1)
+        end 
+    else
+        _G.AutoApple = false
+    end
+end)
+
+
  local s = library:CreateWindow('Server')
  local CanBeDropped = s:Button("EnableToolsCanDrop", function()
     for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
