@@ -1,6 +1,6 @@
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/eWKgbdix", true))()
 local w = library:CreateWindow('Self Cheats')
-local t = w:Toggle('Infinite Health', {flag = "toggle1"}, function(d)
+local t = w:Toggle('Infinite Health', {flag = "toggle"}, function(d)
     if d then
         _G.looprefill = true
         while _G.looprefill do
@@ -11,6 +11,20 @@ local t = w:Toggle('Infinite Health', {flag = "toggle1"}, function(d)
         _G.looprefill = false
         end
     end)    
+
+local t2 = w:Toggle('Auto Kill Bad Guys', {flag = "toggle"}, function(e)
+    if e then
+        _G.loopkillbadguys = true
+        while _G.loopkillbadguys do
+        for i,v in pairs(game.Workspace.BadGuys:GetChildren()) do
+        game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v, 8)
+        end
+        wait(0.1)
+        end
+        else
+        _G.loopkillbadguys = false
+        end
+    end)           
 
 local GiveItem = w:Dropdown("Items[Free]", {
     items = _G;
